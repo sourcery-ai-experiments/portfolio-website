@@ -1,61 +1,100 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string;
+  body: string;
+  imgSrc: string;
+  badges: string[];
+  href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { title, body, imgSrc, badges, href } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
+  <a href={href}>
+    <img src={imgSrc} alt={title} />
+    <div>
+      <h2>
+        {title}
+        <span>&rarr;</span>
+      </h2>
+      <p>
+        {body}
+      </p>
+      <div class="badges">
+        {badges.map((badge) => <span class="badge">{badge}</span>)}
+      </div>
+    </div>
+  </a>
 </li>
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  .link-card {
+    list-style: none;
+    display: flex;
+    padding: 1px;
+    background-color: #23262d;
+    background-image: none;
+    background-size: 400%;
+    border-radius: 16px;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .link-card > a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: calc(1.5rem - 1px);
+    border-radius: 16px;
+    color: white;
+    background-color: #23262d;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+  }
+
+  .link-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    margin-right: 1rem;
+    max-width: 100%;
+  }
+
+  .badges {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .badge {
+    background-color: #23262d;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    border: 1.9px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem; /* reduces the font size of the badges */
+    max-width: 100%; /* ensures the badges don't overflow the card */
+    white-space: nowrap; /* prevents the badges from breaking onto multiple lines */
+    overflow: hidden; /* hides any overflow */
+    text-overflow: ellipsis; /* adds an ellipsis (...) if the badge text overflows */
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+  }
+  .link-card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent-light));
+  }
 </style>

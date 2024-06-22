@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="skills-card-grid">
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">React</div>
+    <div class="skill-card">Node.js</div>
+    <!-- Add more skills as needed -->
+  </div>
+</section>
+
+<style>
+  .skills h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .skills-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skill-card {
+    background: #23262d;
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+</style>

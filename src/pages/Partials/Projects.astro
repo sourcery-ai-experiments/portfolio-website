@@ -1,0 +1,83 @@
+---
+import Card from "../../components/Card.astro";
+---
+
+<section class="projects">
+    <h2>Projects</h2>
+    <ul role="list" class="card-grid">
+        <Card
+            href="https://github.com/EvickaStudio/portfolio-website"
+            title="Portfolio"
+            body="The current website you are looking at. It is build using Astro with Svelte and TailwindCSS."
+            imgSrc="https://cdn.evickastudio.de/static/media/evickastudio_pic.svg"
+            badges={["astro", "svelte", "tailwindcss"]}
+        />
+        <Card
+            href="https://github.com/EvickaStudio/Moodle-Mate"
+            title="MoodleMate"
+            body="Program to fetch Moodle notifications at regular intervals, summarize their content, and send it to you via webhook to Discord."
+            imgSrc="https://cdn.evickastudio.de/static/media/moodemate_cover.png"
+            badges={["education", "python", "gpt-3", "gpt-4", "moodle"]}
+        />
+        <Card
+            href="https://github.com/EvickaStudio/portfolio-website"
+            title="Portfolio"
+            body="The current website you are looking at. It is build using Astro with Svelte and TailwindCSS."
+            imgSrc="https://cdn.evickastudio.de/static/media/evickastudio_pic.svg"
+            badges={["astro", "svelte", "tailwindcss"]}
+        />
+        <Card
+            href="https://github.com/EvickaStudio/Moodle-Mate"
+            title="MoodleMate"
+            body="Program to fetch Moodle notifications at regular intervals, summarize their content, and send it to you via webhook to Discord."
+            imgSrc="https://cdn.evickastudio.de/static/media/moodemate_cover.png"
+            badges={["education", "python", "gpt-3", "gpt-4", "moodle"]}
+        />
+        <Card
+            href="https://github.com/EvickaStudio/portfolio-website"
+            title="Portfolio"
+            body="The current website you are looking at. It is build using Astro with Svelte and TailwindCSS."
+            imgSrc="https://cdn.evickastudio.de/static/media/evickastudio_pic.svg"
+            badges={["astro", "svelte", "tailwindcss"]}
+        />
+        <Card
+            href="https://github.com/EvickaStudio/Moodle-Mate"
+            title="MoodleMate"
+            body="Program to fetch Moodle notifications at regular intervals, summarize their content, and send it to you via webhook to Discord."
+            imgSrc="https://cdn.evickastudio.de/static/media/moodemate_cover.png"
+            badges={["education", "python", "gpt-3", "gpt-4", "moodle"]}
+        />
+    </ul>
+</section>
+
+<style>
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .card-grid > *:nth-child(4n + 1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .card-grid > *:nth-child(4n + 4) {
+        grid-column: span 2;
+    }
+
+    .card-grid > * {
+        min-height: 300px;
+    }
+
+    .projects h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        animation: fadeIn 1s ease-in-out;
+    }
+</style>

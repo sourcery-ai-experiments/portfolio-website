@@ -88,7 +88,13 @@ const { title, body, imgSrc, badges, href } = Astro.props;
     white-space: nowrap; /* prevents the badges from breaking onto multiple lines */
     overflow: hidden; /* hides any overflow */
     text-overflow: ellipsis; /* adds an ellipsis (...) if the badge text overflows */
+    transition: transform 0.3s ease; /* Add transition for transform */
   }
+
+  .badge:hover {
+    transform: scale(1.1); /* Scale up badge on hover */
+  }
+
   h2 {
     margin: 0;
     font-size: 1.25rem;

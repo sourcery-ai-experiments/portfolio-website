@@ -9,7 +9,7 @@ import Projects from "./Partials/Projects.astro";
 ---
 
 <Layout title="EvickaStudio">
-  <main class="main-content">
+  <main class="main-content" data-has-hero>
     <Hero />
     <section class="about">
       <h2>About Me</h2>
@@ -24,6 +24,22 @@ import Projects from "./Partials/Projects.astro";
 </Layout>
 
 <style>
+  :root {
+    --purple-hsl: 6, 93%, 71%; /* Updated to salmon pink */
+    --overlay-blurple: hsla(var(--purple-hsl), 0.2);
+  }
+
+  :root[data-theme='light'] {
+    --purple-hsl: 6, 93%, 71%; /* Updated to salmon pink */
+  }
+
+  body[data-has-hero] {
+    background:
+      linear-gradient(135deg, var(--overlay-blurple), transparent 30%),
+      radial-gradient(circle at 20% 50%, var(--overlay-blurple), transparent 50%) no-repeat -30vw -20vh / 80vw 160vh,
+      radial-gradient(circle at 80% 50%, var(--overlay-blurple), transparent 50%) no-repeat 30vw 20vh / 80vw 160vh;
+  }
+
   .main-content {
     padding: 4rem;
     max-width: 1200px;

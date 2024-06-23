@@ -6,8 +6,15 @@ import SkillCard from "../../components/SkillCard.astro";
 <section class="skills">
   <h2>Skills</h2>
   <div class="skills-card-grid">
-const skills = ["Java", "Python", "Go", "C", "MariaDB", "MySQL", "SQLite", "Git", "Docker"];
-{skills.map(skill => <SkillCard skill={skill} />)}
+    <SkillCard skill="Java" />
+    <SkillCard skill="Python" />
+    <SkillCard skill="Go" />
+    <SkillCard skill="C" />
+    <SkillCard skill="MariaDB" />
+    <SkillCard skill="MySQL" />
+    <SkillCard skill="SQLite" />
+    <SkillCard skill="Git" />
+    <SkillCard skill="Docker" />
   </div>
 </section>
 

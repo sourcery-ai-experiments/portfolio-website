@@ -27,6 +27,7 @@ import Projects from "./Partials/Projects.astro";
   :root {
     --purple-hsl: 6, 93%, 71%; /* Updated to salmon pink */
     --overlay-blurple: hsla(var(--purple-hsl), 0.2);
+    --salmon-pink: rgba(250, 128, 114, 0.6); /* Define salmon pink color */
   }
 
   :root[data-theme='light'] {
@@ -38,6 +39,7 @@ import Projects from "./Partials/Projects.astro";
       linear-gradient(135deg, var(--overlay-blurple), transparent 30%),
       radial-gradient(circle at 20% 50%, var(--overlay-blurple), transparent 50%) no-repeat -30vw -20vh / 80vw 160vh,
       radial-gradient(circle at 80% 50%, var(--overlay-blurple), transparent 50%) no-repeat 30vw 20vh / 80vw 160vh;
+    filter: drop-shadow(0 0 20px var(--salmon-pink)); /* Add glow to the whole site */
   }
 
   .main-content {
@@ -97,11 +99,6 @@ import Projects from "./Partials/Projects.astro";
     font-weight: bold;
     margin-bottom: 1rem;
     animation: fadeIn 1s ease-in-out;
-  }
-
-  .about p, .skills-list, .contact p, .blog p {
-    font-size: 1.125rem;
-    line-height: 1.6;
   }
 
   .projects h2 {

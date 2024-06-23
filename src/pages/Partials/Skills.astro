@@ -1,14 +1,20 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import SkillCard from "../../components/SkillCard.astro";
 ---
 
 <section class="skills">
   <h2>Skills</h2>
   <div class="skills-card-grid">
-    <div class="skill-card">JavaScript</div>
-    <div class="skill-card">React</div>
-    <div class="skill-card">Node.js</div>
-    <!-- Add more skills as needed -->
+    <SkillCard skill="Java" />
+    <SkillCard skill="Python" />
+    <SkillCard skill="Go" />
+    <SkillCard skill="C" />
+    <SkillCard skill="MariaDB" />
+    <SkillCard skill="MySQL" />
+    <SkillCard skill="SQLite" />
+    <SkillCard skill="Git" />
+    <SkillCard skill="Docker" />
   </div>
 </section>
 
@@ -26,14 +32,5 @@ import Layout from "../../layouts/Layout.astro";
     gap: 20px;
     padding: 0;
     margin: 0;
-  }
-
-  .skill-card {
-    background: #23262d;
-    padding: 1rem;
-    border-radius: 8px;
-    color: white;
-    text-align: center;
-    font-size: 1.25rem;
   }
 </style>
